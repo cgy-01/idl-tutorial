@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -395,9 +395,62 @@
 <h1>Array<a class="headerlink" href="#array" title="Link to this heading">#</a></h1>
 <section id="create-array">
 <h2>Create Array<a class="headerlink" href="#create-array" title="Link to this heading">#</a></h2>
+<p>Arrays can be created immediately or by functions.<br />
+Create with <code class="docutils literal notranslate"><span class="pre">[]</span></code></p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>arr<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>]
+<span class="nb">print</span>,<span class="w"> </span>arr
+
+<span class="c1">; [start:end:step]</span>
+arr1<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">1</span><span class="o">:</span><span class="mi">8</span>]
+arr2<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">1</span><span class="o">:</span><span class="mi">8</span><span class="o">:</span><span class="mi">2</span>]
+arr3<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">2</span><span class="o">:-</span><span class="mi">6</span>]
+
+<span class="c1">; Multidimensional Array</span>
+arr<span class="w"> </span><span class="o">=</span><span class="w"> </span>[[<span class="mi">1</span>,<span class="mi">2</span>,<span class="mi">3</span>],[<span class="mi">4</span>,<span class="mi">5</span>,<span class="mi">6</span>]]
+
+<span class="c1">; Array Concatenation</span>
+a<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">1</span>,<span class="mi">2</span>,<span class="mi">3</span>]
+b<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">4</span>,<span class="mi">5</span>,<span class="mi">6</span>]
+arr1<span class="w"> </span><span class="o">=</span><span class="w"> </span>[a,b]
+arr2<span class="w"> </span><span class="o">=</span><span class="w"> </span>[[a],[b]]
+</pre></div>
+</div>
+<p>Create with functions</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>arr1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">intarr</span>(<span class="mi">6</span>)
+arr2<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">indgen</span>(<span class="mi">6</span>)
+arr3<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">indgen</span>(<span class="mi">2</span>,<span class="w"> </span><span class="mi">2</span>)
+arr4<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">replicate</span>(<span class="mf">3.2</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>)
+</pre></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">make_array()</span></code> to create arrays more flexibly, click <a class="reference external" href="https://www.nv5geospatialsoftware.com/docs/MAKE_ARRAY.html">here</a> to read more.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>arr1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">make_array</span>(<span class="mi">3</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="o">/</span><span class="nb">byte</span>)
+arr2<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">make_array</span>(<span class="mi">3</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="o">/</span><span class="nb">byte</span>,<span class="w"> </span><span class="o">/</span>index)
+arr3<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">make_array</span>(<span class="mi">3</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span>value<span class="o">=</span><span class="il">12L</span>)
+
+sz<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">2</span>,<span class="w"> </span><span class="mi">4</span>,<span class="w"> </span><span class="mi">5</span>,<span class="w"> </span><span class="mi">1</span>,<span class="w"> </span><span class="mi">20</span>]
+arr4<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">make_array</span>(<span class="nb">size</span><span class="o">=</span>sz)
+</pre></div>
+</div>
 </section>
 <section id="array-index">
 <h2>Array Index<a class="headerlink" href="#array-index" title="Link to this heading">#</a></h2>
+<p>IDL array index starts from 0, and supports negetive index.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>arr<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">indgen</span>(<span class="mi">6</span>)
+arr[<span class="mi">2</span>]
+arr[<span class="mi">2</span><span class="o">:</span><span class="mi">4</span>]
+arr[<span class="o">*</span>]
+arr[<span class="mi">3</span><span class="o">:*</span>]
+
+index<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">1</span>,<span class="mi">3</span>,<span class="mi">5</span>]
+arr[index]
+
+i<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+arr[i<span class="o">:</span>i<span class="o">+</span><span class="mi">2</span>]
+
+arr[<span class="o">-</span><span class="mi">1</span>]
+arr[<span class="o">-</span><span class="mi">4</span><span class="o">:-</span><span class="mi">1</span>]
+</pre></div>
+</div>
 </section>
 <section id="array-functions">
 <h2>Array Functions<a class="headerlink" href="#array-functions" title="Link to this heading">#</a></h2>

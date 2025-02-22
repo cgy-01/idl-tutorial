@@ -30,6 +30,7 @@ a = 3B
 a1 = fix(a)
 b = 1.23
 b1 = double(b)
+print, a1, b1
 ```
 Here are usual IDL variables data type and conversion functions.
 |Data Type|Bytes|Create|Conversion Function|
@@ -61,5 +62,45 @@ print, floor(arr)
 print, ceil(arr)
 ```
 ## Attributes and Methods of Variables
+A variable has attributes and methods. Similiar with python, you can use `.` to call them.
+```idl
+a = 123
+print, a.typename
 
+b = [1, 2, 3, 4, 5]
+print, b.length
+print, b.mean()
+
+c = "abcdef"
+cx = c.replace('cd', 'xx')
+print, cx
+```
 ## Invalid Values and Infinity Values
+IDL has two special values: Invalid Value (`NaN` or `-NaN`) and Infinity Value (`Inf` or `-Inf`). Use system variable `!values` to create them.
+```idl
+a = !values.f_nan
+help, a
+
+b = !values.f_infinity
+help, b
+```
+All numerical operations involving invalid values ​​result in invalid values, and all numerical operations involving infinity values ​​result in infinity values.
+```{warning} 
+Illegal operations will also produce invalid values ​​or infinite values.
+```
+You can use function `finite()` to check if a variable is NaN or Inf.
+```idl
+a = 1
+print, finite(a)
+print, finite(a, /nan)
+print, finite(a, /infinity)
+```
+You can also use method `var.isNaN()` and `var.isInfinite()`.
+```idl
+a = 1
+b = !values.f_nan
+print, a.isNaN(), b.isNaN()
+
+c = !values.f_infinity
+print, a.isInfinite(), c.isInfinite()
+```

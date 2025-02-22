@@ -12,10 +12,10 @@ This section introduces the fundamental concepts of IDL (Interactive Data Langua
 
 Click on the sections below to dive deeper into each topic:
 
-- [Variables](book/basic/syntax/Variable)
-- [Arrays](book/basic/syntax/Array)
-- [Strings](book/basic/syntax/String)
-- [Operators](book/basic/syntax/Operator)
-- [Time](book/basic/syntax/Time)
-- [Structures](book/basic/syntax/Structure)
-- [Pointers](book/basic/syntax/Pointer)
+- [Variables](Variable)
+- [Arrays](Array)
+- [Strings](String)
+- [Operators](Operator)
+- [Time](Time)
+- [Structures](Structure)
+- [Pointers](Pointer)

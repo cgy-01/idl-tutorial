@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -427,6 +427,7 @@ b<span class="w"> </span><span class="o">=</span><span class="w"> </span><span c
 a1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">fix</span>(a)
 b<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.23</span>
 b1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">double</span>(b)
+<span class="nb">print</span>,<span class="w"> </span>a1,<span class="w"> </span>b1
 </pre></div>
 </div>
 <p>Here are usual IDL variables data type and conversion functions.</p>
@@ -525,9 +526,51 @@ b1<span class="w"> </span><span class="o">=</span><span class="w"> </span><span 
 </section>
 <section id="attributes-and-methods-of-variables">
 <h2>Attributes and Methods of Variables<a class="headerlink" href="#attributes-and-methods-of-variables" title="Link to this heading">#</a></h2>
+<p>A variable has attributes and methods. Similiar with python, you can use <code class="docutils literal notranslate"><span class="pre">.</span></code> to call them.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">123</span>
+<span class="nb">print</span>,<span class="w"> </span>a.<span class="nb">typename</span>
+
+b<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>,<span class="w"> </span><span class="mi">5</span>]
+<span class="nb">print</span>,<span class="w"> </span>b.length
+<span class="nb">print</span>,<span class="w"> </span>b.<span class="nb">mean</span>()
+
+c<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;abcdef&quot;</span>
+cx<span class="w"> </span><span class="o">=</span><span class="w"> </span>c.replace(<span class="s1">&#39;cd&#39;</span>,<span class="w"> </span><span class="s1">&#39;xx&#39;</span>)
+<span class="nb">print</span>,<span class="w"> </span>cx
+</pre></div>
+</div>
 </section>
 <section id="invalid-values-and-infinity-values">
 <h2>Invalid Values and Infinity Values<a class="headerlink" href="#invalid-values-and-infinity-values" title="Link to this heading">#</a></h2>
+<p>IDL has two special values: Invalid Value (<code class="docutils literal notranslate"><span class="pre">NaN</span></code> or <code class="docutils literal notranslate"><span class="pre">-NaN</span></code>) and Infinity Value (<code class="docutils literal notranslate"><span class="pre">Inf</span></code> or <code class="docutils literal notranslate"><span class="pre">-Inf</span></code>). Use system variable <code class="docutils literal notranslate"><span class="pre">!values</span></code> to create them.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>a<span class="w"> </span><span class="o">=</span><span class="w"> </span>!values.f_nan
+<span class="nb">help</span>,<span class="w"> </span>a
+
+b<span class="w"> </span><span class="o">=</span><span class="w"> </span>!values.f_infinity
+<span class="nb">help</span>,<span class="w"> </span>b
+</pre></div>
+</div>
+<p>All numerical operations involving invalid values ​​result in invalid values, and all numerical operations involving infinity values ​​result in infinity values.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Illegal operations will also produce invalid values ​​or infinite values.</p>
+</div>
+<p>You can use function <code class="docutils literal notranslate"><span class="pre">finite()</span></code> to check if a variable is NaN or Inf.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="nb">print</span>,<span class="w"> </span><span class="nb">finite</span>(a)
+<span class="nb">print</span>,<span class="w"> </span><span class="nb">finite</span>(a,<span class="w"> </span><span class="o">/</span>nan)
+<span class="nb">print</span>,<span class="w"> </span><span class="nb">finite</span>(a,<span class="w"> </span><span class="o">/</span>infinity)
+</pre></div>
+</div>
+<p>You can also use method <code class="docutils literal notranslate"><span class="pre">var.isNaN()</span></code> and <code class="docutils literal notranslate"><span class="pre">var.isInfinite()</span></code>.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+b<span class="w"> </span><span class="o">=</span><span class="w"> </span>!values.f_nan
+<span class="nb">print</span>,<span class="w"> </span>a.isNaN(),<span class="w"> </span>b.isNaN()
+
+c<span class="w"> </span><span class="o">=</span><span class="w"> </span>!values.f_infinity
+<span class="nb">print</span>,<span class="w"> </span>a.isInfinite(),<span class="w"> </span>c.isInfinite()
+</pre></div>
+</div>
 </section>
 </section>
 
