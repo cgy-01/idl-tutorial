@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Structure &#8212; IDL Tutorial</title>
+    <title>Standard I/O &#8212; IDL Tutorial</title>
   
   
   
@@ -60,11 +60,11 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/basic/syntax/Structure';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/basic/IO-Operations/Standard-IO';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Pointer" href="Pointer.html" />
-    <link rel="prev" title="Time" href="Time.html" />
+    <link rel="next" title="Files" href="Files.html" />
+    <link rel="prev" title="I/O" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,14 +170,14 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">IDL Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Syntax</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Variable.html">Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Array.html">Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="String.html">String</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Operator.html">Operator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Time.html">Time</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Pointer.html">Pointer</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../syntax/index.html">Syntax</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Variable.html">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Array.html">Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/String.html">String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Operator.html">Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Time.html">Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Structure.html">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Pointer.html">Pointer</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../programming/index.html">Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -187,14 +187,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../programming/Experience.html">Improve Programming Experience</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../IO-Operations/index.html">I/O</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../IO-Operations/Standard-IO.html">Standard I/O</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../IO-Operations/Files.html">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../IO-Operations/ASCII.html">ASCII</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../IO-Operations/Binary.html">Binary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../IO-Operations/Image.html">Image</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../IO-Operations/HDF.html">HDF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../IO-Operations/NetCDF.html">NetCDF</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">I/O</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Standard I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Files.html">Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ASCII.html">ASCII</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Binary.html">Binary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Image.html">Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HDF.html">HDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NetCDF.html">NetCDF</a></li>
 </ul>
 </details></li>
 </ul>
@@ -273,7 +273,7 @@
       
       
       
-      <li><a href="https://github.com/cgy-01/idl-tutorial/issues/new?title=Issue%20on%20page%20%2Fbook/basic/syntax/Structure.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/cgy-01/idl-tutorial/issues/new?title=Issue%20on%20page%20%2Fbook/basic/IO-Operations/Standard-IO.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,7 +303,7 @@
       
       
       
-      <li><a href="../../../_sources/book/basic/syntax/Structure.md" target="_blank"
+      <li><a href="../../../_sources/book/basic/IO-Operations/Standard-IO.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -366,7 +366,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -377,11 +379,20 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Structure</h1>
+    <h1>Standard I/O</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-input">Data Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-output">Data output</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -391,8 +402,31 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="structure">
-<h1>Structure<a class="headerlink" href="#structure" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="standard-i-o">
+<h1>Standard I/O<a class="headerlink" href="#standard-i-o" title="Link to this heading">#</a></h1>
+<section id="data-input">
+<h2>Data Input<a class="headerlink" href="#data-input" title="Link to this heading">#</a></h2>
+<p>The procedure <code class="docutils literal notranslate"><span class="pre">read</span></code> passes values from the keyboard to your variables.<br />
+If the type is not defined, the default is floating point.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="nb">read</span>,<span class="w"> </span>a
+
+<span class="nb">read</span>,<span class="w"> </span>a,<span class="w"> </span>prompt<span class="o">=</span><span class="s1">&#39;Input value a:&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="data-output">
+<h2>Data output<a class="headerlink" href="#data-output" title="Link to this heading">#</a></h2>
+<p>The procedure <code class="docutils literal notranslate"><span class="pre">print</span></code> outputs data to the command line.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span>,<span class="w"> </span><span class="s1">&#39;Hello RS&#39;</span>
+
+<span class="nb">print</span>,<span class="w"> </span><span class="m">12B</span>
+
+<span class="nb">print</span>,<span class="w"> </span><span class="mi">12</span>,<span class="w"> </span><span class="mf">12.3</span>
+
+<span class="nb">print</span>,<span class="w"> </span>[<span class="mi">1</span><span class="o">:</span><span class="mi">5</span>]
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -408,7 +442,7 @@
         },
         kernelOptions: {
             name: "python3",
-            path: "./book\basic\syntax"
+            path: "./book\basic\IO-Operations"
         },
         predefinedOutput: true
     }
@@ -426,20 +460,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Time.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Time</p>
+        <p class="prev-next-title">I/O</p>
       </div>
     </a>
     <a class="right-next"
-       href="Pointer.html"
+       href="Files.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pointer</p>
+        <p class="prev-next-title">Files</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -449,6 +483,23 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-input">Data Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-output">Data output</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
