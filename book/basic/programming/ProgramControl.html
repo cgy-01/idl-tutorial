@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>String &#8212; IDL Tutorial</title>
+    <title>Program Conntrol &#8212; IDL Tutorial</title>
   
   
   
@@ -60,11 +60,11 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/basic/syntax/String';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/basic/programming/ProgramControl';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Operator" href="Operator.html" />
-    <link rel="prev" title="Array" href="Array.html" />
+    <link rel="next" title="Variable Scope" href="VariableScope.html" />
+    <link rel="prev" title="Procedures &amp; Functions" href="Procedures%26Functions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,18 +170,21 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">IDL Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Syntax</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Variable.html">Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Array.html">Array</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">String</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Operator.html">Operator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Time.html">Time</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Structure.html">Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Pointer.html">Pointer</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../syntax/index.html">Syntax</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Variable.html">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Array.html">Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/String.html">String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Operator.html">Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Time.html">Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Structure.html">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Pointer.html">Pointer</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../programming/index.html">Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../programming/1.html">1</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Procedures%26Functions.html">Procedures &amp; Functions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Program Conntrol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VariableScope.html">Variable Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Experience.html">Improve Programming Experience</a></li>
 </ul>
 </details></li>
 </ul>
@@ -260,7 +263,7 @@
       
       
       
-      <li><a href="https://github.com/cgy-01/idl-tutorial/issues/new?title=Issue%20on%20page%20%2Fbook/basic/syntax/String.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/cgy-01/idl-tutorial/issues/new?title=Issue%20on%20page%20%2Fbook/basic/programming/ProgramControl.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -290,7 +293,7 @@
       
       
       
-      <li><a href="../../../_sources/book/basic/syntax/String.md" target="_blank"
+      <li><a href="../../../_sources/book/basic/programming/ProgramControl.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -366,7 +369,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>String</h1>
+    <h1>Program Conntrol</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,26 +379,18 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-string">Create String</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-strings">Link Strings</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">+</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strjoin">strjoin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-join">array.join</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-structure">Select Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case">case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch">switch</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">String Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strlen">strlen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strlowcase-strupcase">strlowcase. strupcase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strcompress-strtrim">strcompress, strtrim</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strcmp">strcmp</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strpos">strpos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strmid">strmid</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strsplit">strsplit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-remove-replace">insert, remove, replace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-structure">Loop Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">for</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">while</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-reading">String Reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue-break">Continue &amp; Break</a></li>
 </ul>
             </nav>
         </div>
@@ -407,80 +402,115 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="string">
-<h1>String<a class="headerlink" href="#string" title="Link to this heading">#</a></h1>
-<section id="create-string">
-<h2>Create String<a class="headerlink" href="#create-string" title="Link to this heading">#</a></h2>
-<p>Use <code class="docutils literal notranslate"><span class="pre">''</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> to tell IDL it’s a string.</p>
-<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello RS&quot;</span>
-a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello RS&#39;</span>
-a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;say &#39;Hello&#39; RS&quot;</span>
-a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;say &quot;Hello&quot; to RS&#39;</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="program-conntrol">
+<h1>Program Conntrol<a class="headerlink" href="#program-conntrol" title="Link to this heading">#</a></h1>
+<p>If you have a foundation of in other language, such as C, Python and java, this part is very simple, with only a little difference in format.</p>
+<section id="select-structure">
+<h2>Select Structure<a class="headerlink" href="#select-structure" title="Link to this heading">#</a></h2>
+<section id="if">
+<h3>if<a class="headerlink" href="#if" title="Link to this heading">#</a></h3>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span>Expression<span class="w"> </span><span class="k">then</span><span class="w"> </span>Statement1<span class="w"> </span>[<span class="k">else</span><span class="w"> </span>Statement2]
+</pre></div>
+</div>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span>Expression<span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="k">begin</span>
+
+<span class="w">    </span>Statements1
+
+<span class="k">endif</span><span class="w"> </span>[<span class="k">else</span><span class="w"> </span><span class="k">begin</span>
+
+<span class="w">    </span>Statements2
+
+<span class="w">    </span><span class="k">endelse</span>]
+</pre></div>
+</div>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span>Expression1<span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="k">begin</span>
+
+<span class="w">    </span>Statements1
+
+<span class="k">endif</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span>Expression2<span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="k">begin</span>
+
+<span class="w">    </span>Statements2
+
+<span class="k">endif</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span>Expression3<span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="k">begin</span>
+
+<span class="w">    </span>Statements3
+
+<span class="w">    </span>...
+<span class="w">    </span>...
+
+<span class="k">endif</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">begin</span>
+
+<span class="w">    </span>Statementsn
+
+<span class="k">endif</span>
 </pre></div>
 </div>
 </section>
-<section id="link-strings">
-<h2>Link Strings<a class="headerlink" href="#link-strings" title="Link to this heading">#</a></h2>
-<section id="id1">
-<h3>+<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-</section>
-<section id="strjoin">
-<h3>strjoin<a class="headerlink" href="#strjoin" title="Link to this heading">#</a></h3>
-</section>
-<section id="array-join">
-<h3>array.join<a class="headerlink" href="#array-join" title="Link to this heading">#</a></h3>
-</section>
-</section>
-<section id="string-functions">
-<h2>String Functions<a class="headerlink" href="#string-functions" title="Link to this heading">#</a></h2>
-<section id="strlen">
-<h3>strlen<a class="headerlink" href="#strlen" title="Link to this heading">#</a></h3>
-</section>
-<section id="strlowcase-strupcase">
-<h3>strlowcase. strupcase<a class="headerlink" href="#strlowcase-strupcase" title="Link to this heading">#</a></h3>
-</section>
-<section id="strcompress-strtrim">
-<h3>strcompress, strtrim<a class="headerlink" href="#strcompress-strtrim" title="Link to this heading">#</a></h3>
-</section>
-<section id="strcmp">
-<h3>strcmp<a class="headerlink" href="#strcmp" title="Link to this heading">#</a></h3>
-</section>
-<section id="strpos">
-<h3>strpos<a class="headerlink" href="#strpos" title="Link to this heading">#</a></h3>
-</section>
-<section id="strmid">
-<h3>strmid<a class="headerlink" href="#strmid" title="Link to this heading">#</a></h3>
-</section>
-<section id="strsplit">
-<h3>strsplit<a class="headerlink" href="#strsplit" title="Link to this heading">#</a></h3>
-</section>
-<section id="insert-remove-replace">
-<h3>insert, remove, replace<a class="headerlink" href="#insert-remove-replace" title="Link to this heading">#</a></h3>
-</section>
-</section>
-<section id="type-conversion">
-<h2>Type Conversion<a class="headerlink" href="#type-conversion" title="Link to this heading">#</a></h2>
-<p>To convert other types to string, use <code class="docutils literal notranslate"><span class="pre">string()</span></code> <code class="docutils literal notranslate"><span class="pre">var.toString()</span></code>.<br />
-To convert string to other types, use <code class="docutils literal notranslate"><span class="pre">fix()</span></code> <code class="docutils literal notranslate"><span class="pre">long()</span></code> <code class="docutils literal notranslate"><span class="pre">float()</span></code>.</p>
-</section>
-<section id="string-reading">
-<h2>String Reading<a class="headerlink" href="#string-reading" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">reads</span></code> reads data from a string variable according to the specified format.</p>
-<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>str<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1 2 3 4&quot;</span>
-<span class="nb">reads</span>,<span class="w"> </span>str,<span class="w"> </span>a1,<span class="w"> </span>a2,<span class="w"> </span>a3,<span class="w"> </span>a4
-<span class="nb">print</span>,<span class="w"> </span>a1,<span class="w"> </span>a2,<span class="w"> </span>a3,<span class="w"> </span>a4
+<section id="case">
+<h3>case<a class="headerlink" href="#case" title="Link to this heading">#</a></h3>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="w"> </span>expression<span class="w"> </span><span class="k">of</span>
+
+<span class="w">    </span>expression<span class="o">:</span><span class="w"> </span>statement(s)
+<span class="w">    </span>
+<span class="w">    </span>...
+<span class="w">    </span>
+<span class="w">    </span>expression<span class="o">:</span><span class="w"> </span>statement(s)
+
+[<span class="w"> </span><span class="k">else</span><span class="o">:</span><span class="w"> </span>statement(s)<span class="w"> </span>]
+
+<span class="k">endcase</span>
 </pre></div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>By default, <code class="docutils literal notranslate"><span class="pre">reads</span></code> outputs data as a float number. To output in other type, you need to create the variable in advance.”</p>
-</div>
-<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>data<span class="w"> </span><span class="s2">&quot;49.17127 123.06716 7/2/2013 16:44:56&quot;</span>
-Lat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span>&amp;<span class="w"> </span>Lon<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span>&amp;<span class="w"> </span>Date<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>&amp;<span class="w"> </span>Time<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
-<span class="nb">reads</span>,<span class="w"> </span>data<span class="w"> </span>Lat,<span class="w"> </span>Lon,<span class="w"> </span>Date,<span class="w"> </span>Time,<span class="w"> </span>format<span class="o">=</span><span class="s1">&#39;(f9.5, f10.5, a9, a8)&#39;</span>
-<span class="nb">help</span>,<span class="w"> </span>Lat,<span class="w"> </span>Lon,<span class="w"> </span>Date,<span class="w"> </span>Time
+</section>
+<section id="switch">
+<h3>switch<a class="headerlink" href="#switch" title="Link to this heading">#</a></h3>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="w"> </span>expression<span class="w"> </span><span class="k">of</span>
+
+<span class="w">   </span>expression<span class="o">:</span><span class="w"> </span>statement
+
+<span class="w">   </span>...
+
+<span class="w">   </span>expression<span class="o">:</span><span class="w"> </span>statement
+
+<span class="k">else</span><span class="o">:</span><span class="w"> </span>statement
+
+<span class="k">endswitch</span>
 </pre></div>
 </div>
+</section>
+</section>
+<section id="loop-structure">
+<h2>Loop Structure<a class="headerlink" href="#loop-structure" title="Link to this heading">#</a></h2>
+<section id="for">
+<h3>for<a class="headerlink" href="#for" title="Link to this heading">#</a></h3>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="o">=</span><span class="w"> </span>Start_n,<span class="w"> </span>End_n,<span class="w"> </span>[Step<span class="o">=</span><span class="mi">1</span>]<span class="w"> </span><span class="k">do</span>
+</pre></div>
+</div>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="o">=</span><span class="w"> </span>Start_n,<span class="w"> </span>End_n,<span class="w"> </span>[Step<span class="o">=</span><span class="mi">1</span>]<span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">begin</span>
+
+<span class="w">    </span>Statements
+
+<span class="k">endfor</span>
+</pre></div>
+</div>
+</section>
+<section id="while">
+<h3>while<a class="headerlink" href="#while" title="Link to this heading">#</a></h3>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span>Expression<span class="w"> </span><span class="k">do</span><span class="w"> </span>Statement
+</pre></div>
+</div>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="w"> </span>Expression<span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">begin</span>
+<span class="w">    </span>
+<span class="w">    </span>Statements
+
+<span class="k">endwhile</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="continue-break">
+<h2>Continue &amp; Break<a class="headerlink" href="#continue-break" title="Link to this heading">#</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">continue</span></code> to go into the next loop, skipping the following statements of this loop, and use <code class="docutils literal notranslate"><span class="pre">break</span></code> to jump out of the loop immediately.</p>
 </section>
 </section>
 
@@ -497,7 +527,7 @@ Lat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span
         },
         kernelOptions: {
             name: "python3",
-            path: "./book\basic\syntax"
+            path: "./book\basic\programming"
         },
         predefinedOutput: true
     }
@@ -515,20 +545,20 @@ Lat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Array.html"
+       href="Procedures%26Functions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Array</p>
+        <p class="prev-next-title">Procedures &amp; Functions</p>
       </div>
     </a>
     <a class="right-next"
-       href="Operator.html"
+       href="VariableScope.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Operator</p>
+        <p class="prev-next-title">Variable Scope</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -549,26 +579,18 @@ Lat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-string">Create String</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-strings">Link Strings</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">+</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strjoin">strjoin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-join">array.join</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-structure">Select Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case">case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#switch">switch</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">String Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strlen">strlen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strlowcase-strupcase">strlowcase. strupcase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strcompress-strtrim">strcompress, strtrim</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strcmp">strcmp</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strpos">strpos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strmid">strmid</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strsplit">strsplit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-remove-replace">insert, remove, replace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-structure">Loop Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for">for</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while">while</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-reading">String Reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue-break">Continue &amp; Break</a></li>
 </ul>
   </nav></div>
 

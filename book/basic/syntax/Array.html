@@ -378,7 +378,18 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-array">Create Array</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-index">Array Index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-functions">Array Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-functions">Array Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-elements">n_elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#size">size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-min">max, min</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-median-variance-stddev">mean, median, variance, stddev</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total">total</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness-kurtosis-moment">skewness, kurtosis, moment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where">where</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reform-transpose-sort-reverse-shift">reform, transpose, sort, reverse, shift</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniq">uniq</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">Array Operations</a></li>
 </ul>
             </nav>
@@ -454,9 +465,86 @@ arr[<span class="o">-</span><span class="mi">4</span><span class="o">:-</span><s
 </section>
 <section id="array-functions">
 <h2>Array Functions<a class="headerlink" href="#array-functions" title="Link to this heading">#</a></h2>
+<section id="n-elements">
+<h3>n_elements<a class="headerlink" href="#n-elements" title="Link to this heading">#</a></h3>
+<p>Function <code class="docutils literal notranslate"><span class="pre">n_elements()</span></code> is used to count the number of all elements, returning 0 if the array isnot defined.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>arr<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">findgen</span>(<span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>)
+<span class="nb">print</span>,<span class="w"> </span><span class="nb">n_elements</span>(arr)
+
+<span class="c1">; same as array.length</span>
+<span class="nb">print</span>,<span class="w"> </span>arr.length
+</pre></div>
+</div>
+</section>
+<section id="size">
+<h3>size<a class="headerlink" href="#size" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">size</span></code> return a long type array,including dimensions, size, elemant type.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>arr<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">fltarr</span>(<span class="mi">10</span>,<span class="w"> </span><span class="mi">20</span>)
+<span class="nb">print</span>,<span class="w"> </span><span class="nb">size</span>(arr)
+</pre></div>
+</div>
+<p>The first output number is dimension, the next few numbers is size of each dimension, the last two are element_type and n_elements.<br />
+You can also use <code class="docutils literal notranslate"><span class="pre">array.ndim</span></code>, <code class="docutils literal notranslate"><span class="pre">array.dim</span></code>, <code class="docutils literal notranslate"><span class="pre">array.typrCode</span></code>, <code class="docutils literal notranslate"><span class="pre">typeName</span></code> to get the same attributes.</p>
+</section>
+<section id="max-min">
+<h3>max, min<a class="headerlink" href="#max-min" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">max</span></code> and <code class="docutils literal notranslate"><span class="pre">min</span></code> return the max value and the min value.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>arr<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">1</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mf">4.2</span>,<span class="w"> </span><span class="mi">6</span>,<span class="w"> </span><span class="o">-</span><span class="mf">2.3</span>,<span class="w"> </span><span class="mf">3.2</span>]
+<span class="nb">print</span>,<span class="w"> </span><span class="nb">max</span>(arr),<span class="w"> </span><span class="nb">min</span>(arr)
+</pre></div>
+</div>
+</section>
+<section id="mean-median-variance-stddev">
+<h3>mean, median, variance, stddev<a class="headerlink" href="#mean-median-variance-stddev" title="Link to this heading">#</a></h3>
+</section>
+<section id="total">
+<h3>total<a class="headerlink" href="#total" title="Link to this heading">#</a></h3>
+</section>
+<section id="skewness-kurtosis-moment">
+<h3>skewness, kurtosis, moment<a class="headerlink" href="#skewness-kurtosis-moment" title="Link to this heading">#</a></h3>
+</section>
+<section id="where">
+<h3>where<a class="headerlink" href="#where" title="Link to this heading">#</a></h3>
+</section>
+<section id="reform-transpose-sort-reverse-shift">
+<h3>reform, transpose, sort, reverse, shift<a class="headerlink" href="#reform-transpose-sort-reverse-shift" title="Link to this heading">#</a></h3>
+</section>
+<section id="uniq">
+<h3>uniq<a class="headerlink" href="#uniq" title="Link to this heading">#</a></h3>
+</section>
 </section>
 <section id="array-operations">
 <h2>Array Operations<a class="headerlink" href="#array-operations" title="Link to this heading">#</a></h2>
+<p>The operating principle of IDL array is the calculation between corresponding elements of the array.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>a<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">1</span>,<span class="w"> </span><span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">2</span>]
+b<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">2</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">4</span>,<span class="w"> </span><span class="mi">5</span>]
+<span class="nb">print</span>,<span class="w"> </span>a<span class="o">+</span>b
+<span class="nb">print</span>,<span class="w"> </span>a<span class="o">*</span>b
+</pre></div>
+</div>
+<p>Array and variable operations still return an array.</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+b<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">5</span>,<span class="w"> </span><span class="mi">6</span>,<span class="w"> </span><span class="mi">7</span>,<span class="w"> </span><span class="mi">8</span>]
+<span class="nb">print</span>,<span class="w"> </span>a<span class="o">*</span>b,<span class="w"> </span>a<span class="o">+</span>b
+</pre></div>
+</div>
+<p>Assigning a variable to an array results in all elements of the subarray being assigned the variable value.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Assignment operation will not change the type of the array.</p>
+</div>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>arr<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="mi">1</span>,<span class="w"> </span><span class="mi">1</span>,<span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="mi">2</span>]
+arr[<span class="mi">0</span><span class="o">:</span><span class="mi">3</span>]<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.1</span>
+<span class="nb">print</span>,<span class="w"> </span>arr
+</pre></div>
+</div>
+<p>If you want to culculate arrays like matrixs, use <code class="docutils literal notranslate"><span class="pre">#</span></code> and <code class="docutils literal notranslate"><span class="pre">##</span></code>.<br />
+Use the <code class="docutils literal notranslate"><span class="pre">#</span></code> operation to multiply the <strong>columns</strong> of the first array by the <strong>rows</strong> of the second array.<br />
+Use the <code class="docutils literal notranslate"><span class="pre">##</span></code> operation to multiply the <strong>rows</strong> of the first array by the <strong>columns</strong> of the second array.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The two arrays must be matched; otherwise, an error will occur.”</p>
+</div>
 </section>
 </section>
 
@@ -527,7 +615,18 @@ arr[<span class="o">-</span><span class="mi">4</span><span class="o">:-</span><s
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-array">Create Array</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-index">Array Index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-functions">Array Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-functions">Array Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#n-elements">n_elements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#size">size</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-min">max, min</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mean-median-variance-stddev">mean, median, variance, stddev</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#total">total</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skewness-kurtosis-moment">skewness, kurtosis, moment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where">where</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reform-transpose-sort-reverse-shift">reform, transpose, sort, reverse, shift</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniq">uniq</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">Array Operations</a></li>
 </ul>
   </nav></div>

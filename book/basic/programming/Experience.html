@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>String &#8212; IDL Tutorial</title>
+    <title>Improve Programming Experience &#8212; IDL Tutorial</title>
   
   
   
@@ -60,11 +60,10 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/basic/syntax/String';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/basic/programming/Experience';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Operator" href="Operator.html" />
-    <link rel="prev" title="Array" href="Array.html" />
+    <link rel="prev" title="Variable Scope" href="VariableScope.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,18 +169,21 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">IDL Basics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Syntax</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Variable.html">Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Array.html">Array</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">String</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Operator.html">Operator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Time.html">Time</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Structure.html">Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Pointer.html">Pointer</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../syntax/index.html">Syntax</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Variable.html">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Array.html">Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/String.html">String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Operator.html">Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Time.html">Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Structure.html">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntax/Pointer.html">Pointer</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../programming/index.html">Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../programming/1.html">1</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Programming</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Procedures%26Functions.html">Procedures &amp; Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ProgramControl.html">Program Conntrol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VariableScope.html">Variable Scope</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Improve Programming Experience</a></li>
 </ul>
 </details></li>
 </ul>
@@ -260,7 +262,7 @@
       
       
       
-      <li><a href="https://github.com/cgy-01/idl-tutorial/issues/new?title=Issue%20on%20page%20%2Fbook/basic/syntax/String.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/cgy-01/idl-tutorial/issues/new?title=Issue%20on%20page%20%2Fbook/basic/programming/Experience.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -290,7 +292,7 @@
       
       
       
-      <li><a href="../../../_sources/book/basic/syntax/String.md" target="_blank"
+      <li><a href="../../../_sources/book/basic/programming/Experience.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -366,7 +368,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>String</h1>
+    <h1>Improve Programming Experience</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,26 +378,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-string">Create String</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-strings">Link Strings</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">+</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strjoin">strjoin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-join">array.join</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">String Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strlen">strlen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strlowcase-strupcase">strlowcase. strupcase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strcompress-strtrim">strcompress, strtrim</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strcmp">strcmp</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strpos">strpos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strmid">strmid</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strsplit">strsplit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-remove-replace">insert, remove, replace</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-reading">String Reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-arrays-as-operating-objects">Using arrays as operating objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manage-memory-timely">Manage memory timely</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-call-external-command">How to call external command</a></li>
 </ul>
             </nav>
         </div>
@@ -407,80 +392,17 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="string">
-<h1>String<a class="headerlink" href="#string" title="Link to this heading">#</a></h1>
-<section id="create-string">
-<h2>Create String<a class="headerlink" href="#create-string" title="Link to this heading">#</a></h2>
-<p>Use <code class="docutils literal notranslate"><span class="pre">''</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> to tell IDL it’s a string.</p>
-<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello RS&quot;</span>
-a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello RS&#39;</span>
-a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;say &#39;Hello&#39; RS&quot;</span>
-a<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;say &quot;Hello&quot; to RS&#39;</span>
-</pre></div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="improve-programming-experience">
+<h1>Improve Programming Experience<a class="headerlink" href="#improve-programming-experience" title="Link to this heading">#</a></h1>
+<p>In this section we introduce some tricks that can improve your programming experience greatly.</p>
+<section id="using-arrays-as-operating-objects">
+<h2>Using arrays as operating objects<a class="headerlink" href="#using-arrays-as-operating-objects" title="Link to this heading">#</a></h2>
 </section>
-<section id="link-strings">
-<h2>Link Strings<a class="headerlink" href="#link-strings" title="Link to this heading">#</a></h2>
-<section id="id1">
-<h3>+<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="manage-memory-timely">
+<h2>Manage memory timely<a class="headerlink" href="#manage-memory-timely" title="Link to this heading">#</a></h2>
 </section>
-<section id="strjoin">
-<h3>strjoin<a class="headerlink" href="#strjoin" title="Link to this heading">#</a></h3>
-</section>
-<section id="array-join">
-<h3>array.join<a class="headerlink" href="#array-join" title="Link to this heading">#</a></h3>
-</section>
-</section>
-<section id="string-functions">
-<h2>String Functions<a class="headerlink" href="#string-functions" title="Link to this heading">#</a></h2>
-<section id="strlen">
-<h3>strlen<a class="headerlink" href="#strlen" title="Link to this heading">#</a></h3>
-</section>
-<section id="strlowcase-strupcase">
-<h3>strlowcase. strupcase<a class="headerlink" href="#strlowcase-strupcase" title="Link to this heading">#</a></h3>
-</section>
-<section id="strcompress-strtrim">
-<h3>strcompress, strtrim<a class="headerlink" href="#strcompress-strtrim" title="Link to this heading">#</a></h3>
-</section>
-<section id="strcmp">
-<h3>strcmp<a class="headerlink" href="#strcmp" title="Link to this heading">#</a></h3>
-</section>
-<section id="strpos">
-<h3>strpos<a class="headerlink" href="#strpos" title="Link to this heading">#</a></h3>
-</section>
-<section id="strmid">
-<h3>strmid<a class="headerlink" href="#strmid" title="Link to this heading">#</a></h3>
-</section>
-<section id="strsplit">
-<h3>strsplit<a class="headerlink" href="#strsplit" title="Link to this heading">#</a></h3>
-</section>
-<section id="insert-remove-replace">
-<h3>insert, remove, replace<a class="headerlink" href="#insert-remove-replace" title="Link to this heading">#</a></h3>
-</section>
-</section>
-<section id="type-conversion">
-<h2>Type Conversion<a class="headerlink" href="#type-conversion" title="Link to this heading">#</a></h2>
-<p>To convert other types to string, use <code class="docutils literal notranslate"><span class="pre">string()</span></code> <code class="docutils literal notranslate"><span class="pre">var.toString()</span></code>.<br />
-To convert string to other types, use <code class="docutils literal notranslate"><span class="pre">fix()</span></code> <code class="docutils literal notranslate"><span class="pre">long()</span></code> <code class="docutils literal notranslate"><span class="pre">float()</span></code>.</p>
-</section>
-<section id="string-reading">
-<h2>String Reading<a class="headerlink" href="#string-reading" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">reads</span></code> reads data from a string variable according to the specified format.</p>
-<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>str<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;1 2 3 4&quot;</span>
-<span class="nb">reads</span>,<span class="w"> </span>str,<span class="w"> </span>a1,<span class="w"> </span>a2,<span class="w"> </span>a3,<span class="w"> </span>a4
-<span class="nb">print</span>,<span class="w"> </span>a1,<span class="w"> </span>a2,<span class="w"> </span>a3,<span class="w"> </span>a4
-</pre></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>By default, <code class="docutils literal notranslate"><span class="pre">reads</span></code> outputs data as a float number. To output in other type, you need to create the variable in advance.”</p>
-</div>
-<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span>data<span class="w"> </span><span class="s2">&quot;49.17127 123.06716 7/2/2013 16:44:56&quot;</span>
-Lat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span>&amp;<span class="w"> </span>Lon<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span>&amp;<span class="w"> </span>Date<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>&amp;<span class="w"> </span>Time<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
-<span class="nb">reads</span>,<span class="w"> </span>data<span class="w"> </span>Lat,<span class="w"> </span>Lon,<span class="w"> </span>Date,<span class="w"> </span>Time,<span class="w"> </span>format<span class="o">=</span><span class="s1">&#39;(f9.5, f10.5, a9, a8)&#39;</span>
-<span class="nb">help</span>,<span class="w"> </span>Lat,<span class="w"> </span>Lon,<span class="w"> </span>Date,<span class="w"> </span>Time
-</pre></div>
-</div>
+<section id="how-to-call-external-command">
+<h2>How to call external command<a class="headerlink" href="#how-to-call-external-command" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -497,7 +419,7 @@ Lat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span
         },
         kernelOptions: {
             name: "python3",
-            path: "./book\basic\syntax"
+            path: "./book\basic\programming"
         },
         predefinedOutput: true
     }
@@ -515,22 +437,13 @@ Lat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Array.html"
+       href="VariableScope.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Array</p>
+        <p class="prev-next-title">Variable Scope</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Operator.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Operator</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -549,26 +462,9 @@ Lat<span class="w"> </span><span class="o">=</span><span class="w"> </span><span
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-string">Create String</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#link-strings">Link Strings</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">+</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strjoin">strjoin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-join">array.join</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">String Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strlen">strlen</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strlowcase-strupcase">strlowcase. strupcase</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strcompress-strtrim">strcompress, strtrim</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strcmp">strcmp</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strpos">strpos</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strmid">strmid</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strsplit">strsplit</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-remove-replace">insert, remove, replace</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type-conversion">Type Conversion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-reading">String Reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-arrays-as-operating-objects">Using arrays as operating objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manage-memory-timely">Manage memory timely</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-call-external-command">How to call external command</a></li>
 </ul>
   </nav></div>
 
