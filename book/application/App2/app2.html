@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Temperature Mobile Observation Data Processing &#8212; IDL Tutorial</title>
+    <title>Spectral Data Extraction and Feature Extraction &#8212; IDL Tutorial</title>
   
   
   
@@ -60,10 +60,10 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/application/Lab1/TemperatureMobileObservations';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/application/App2/app2';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="prev" title="IDL Application" href="../index.html" />
+    <link rel="prev" title="Temperature Mobile Observation Data Processing" href="../App1/app1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -208,6 +208,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../basic/ImageProcessing/Statistics.html">Image Statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basic/ImageProcessing/Enhance.html">Image Enhancement</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../basic/ImageProcessing/Filter.html">Image Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../basic/ImageProcessing/GeometrictTrans.html">Geometrict Transformation</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../basic/RSI/index.html">Random &amp; Statistic &amp; Interpolation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -219,10 +220,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">IDL Application</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">IDL Application</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Temperature Mobile Observation Data Processing</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../App1/app1.html">Temperature Mobile Observation Data Processing</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Spectral Data Extraction and Feature Extraction</a></li>
+
 </ul>
 
     </div>
@@ -299,7 +301,7 @@
       
       
       
-      <li><a href="https://github.com/cgy-01/idl-tutorial/issues/new?title=Issue%20on%20page%20%2Fbook/application/Lab1/TemperatureMobileObservations.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/cgy-01/idl-tutorial/issues/new?title=Issue%20on%20page%20%2Fbook/application/App2/app2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -329,7 +331,7 @@
       
       
       
-      <li><a href="../../../_sources/book/application/Lab1/TemperatureMobileObservations.md" target="_blank"
+      <li><a href="../../../_sources/book/application/App2/app2.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -405,7 +407,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Temperature Mobile Observation Data Processing</h1>
+    <h1>Spectral Data Extraction and Feature Extraction</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -415,10 +417,15 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Spectral Data Extraction and Feature Extraction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#result">Result</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -429,87 +436,47 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="temperature-mobile-observation-data-processing">
-<h1>Temperature Mobile Observation Data Processing<a class="headerlink" href="#temperature-mobile-observation-data-processing" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="spectral-data-extraction-and-feature-extraction">
+<h1>Spectral Data Extraction and Feature Extraction<a class="headerlink" href="#spectral-data-extraction-and-feature-extraction" title="Link to this heading">#</a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
-<p>Today we use portable mobile weather station and handheld GNSS device to conduct temperature movement observations.The weather station acquires weather and time information, and GNSS obtain the latitude, longitude and time information of the observation route.<br />
-You need to correlate temperature and latitude and longitude information according to the time, and finally product temperature data with latitude and longitude.</p>
+<ul class="simple">
+<li><p>Smoothing filter</p></li>
+<li><p>Calculate red edge position</p></li>
+<li><p>Calculate red edge amplitude</p></li>
+<li><p>Calculate red edge area</p></li>
+</ul>
 </section>
 <section id="data">
 <h2>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h2>
-<p>Temperature Observation File <code class="docutils literal notranslate"><span class="pre">Ta_record.csv</span></code></p>
+<p>Spectral data of ground objects <code class="docutils literal notranslate"><span class="pre">S0*.txt</span></code>(* from 1 to 5)</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>A</p></th>
-<th class="head"><p>B</p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>A</p></th>
+<th class="head text-center"><p>B</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>Data/Time</p></td>
-<td><p>Temperature</p></td>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>Wavelength</p></td>
+<td class="text-center"><p>Reflectance</p></td>
 </tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>20221108 14:15:01</p></td>
-<td><p>23.58</p></td>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>350</p></td>
+<td class="text-center"><p>0.0274</p></td>
 </tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>20221108 14:15:03</p></td>
-<td><p>23.61</p></td>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>351</p></td>
+<td class="text-center"><p>0.0269</p></td>
 </tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>20221108 14:15:05</p></td>
-<td><p>23.61</p></td>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>352</p></td>
+<td class="text-center"><p>0.0267</p></td>
 </tr>
-<tr class="row-even"><td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>GNSS Data File <code class="docutils literal notranslate"><span class="pre">GNSS_record.csv</span></code></p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>A</p></th>
-<th class="head"><p>B</p></th>
-<th class="head"><p>C</p></th>
-<th class="head"><p>D</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>1</p></td>
-<td><p>Data</p></td>
-<td><p>Time</p></td>
-<td><p>Lat</p></td>
-<td><p>Lon</p></td>
-</tr>
-<tr class="row-odd"><td><p>2</p></td>
-<td><p>11/8/2022</p></td>
-<td><p>14:14:32</p></td>
-<td><p>32.207723</p></td>
-<td><p>118.7126563</p></td>
-</tr>
-<tr class="row-even"><td><p>3</p></td>
-<td><p>11/8/2022</p></td>
-<td><p>14:14:33</p></td>
-<td><p>32.2077237</p></td>
-<td><p>118.7126553</p></td>
-</tr>
-<tr class="row-odd"><td><p>4</p></td>
-<td><p>11/8/2022</p></td>
-<td><p>14:14:34</p></td>
-<td><p>32.2077243</p></td>
-<td><p>118.7126544</p></td>
-</tr>
-<tr class="row-even"><td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
-<td><p>…</p></td>
+<tr class="row-even"><td class="text-center"><p>…</p></td>
+<td class="text-center"><p>…</p></td>
+<td class="text-center"><p>…</p></td>
 </tr>
 </tbody>
 </table>
@@ -517,99 +484,227 @@ You need to correlate temperature and latitude and longitude information accordi
 </section>
 <section id="code">
 <h2>Code<a class="headerlink" href="#code" title="Link to this heading">#</a></h2>
-<p>Procedure <code class="docutils literal notranslate"><span class="pre">ReadData</span></code></p>
-<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">pro</span><span class="w"> </span>ReadData,<span class="w"> </span>Datetime_Ta<span class="o">=</span>Datetime_Ta,<span class="w"> </span>Ta<span class="o">=</span>Ta,<span class="w"> </span>Date_GNSS<span class="o">=</span>Date_GNSS,<span class="w"> </span>Time_GNSS<span class="o">=</span>Time_GNSS,<span class="w"> </span>Lat<span class="o">=</span>Lat,<span class="w"> </span>Lon<span class="o">=</span>Lon
-<span class="w">  </span>fn_Ta<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dialog_pickfile</span>(title<span class="o">=</span><span class="s1">&#39;chose temperature file&#39;</span>,<span class="w"> </span>get_path<span class="o">=</span>work_dir)
-<span class="w">  </span><span class="nb">cd</span>,<span class="w"> </span>work_dir
-<span class="w">  </span>fn_GNSS<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dialog_pickfile</span>(title<span class="o">=</span><span class="s1">&#39;chose GNSS file&#39;</span>)
+<p>function <code class="docutils literal notranslate"><span class="pre">Read_file</span></code></p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>Read_file
+<span class="w">    </span>work_dir<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dialog_pickfile</span>(title<span class="o">=</span><span class="s1">&#39;choose path&#39;</span>,<span class="w"> </span><span class="o">/</span>directory)
+<span class="w">    </span><span class="nb">cd</span>,<span class="w"> </span>work_dir
+<span class="w">    </span>fns<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">file_search</span>(<span class="s1">&#39;*.txt&#39;</span>,<span class="w"> </span>count<span class="o">=</span>fnums)
+<span class="w">    </span>
+<span class="w">    </span><span class="nb">return</span>,<span class="w"> </span>{fns<span class="o">:</span>fns,<span class="w"> </span>fnums<span class="o">:</span>fnums}
+<span class="k">end</span><span class="w"> </span>
+</pre></div>
+</div>
+<p>function <code class="docutils literal notranslate"><span class="pre">SG_smooth</span></code></p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>SG_smooth,<span class="w"> </span>ref,<span class="w"> </span>Nleft,<span class="w"> </span>Nright,<span class="w"> </span>order,<span class="w"> </span>degree
+<span class="w">    </span>SG_filter<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">savgol</span>(Nleft,<span class="w"> </span>Nright,<span class="w"> </span>order,<span class="w"> </span>degree)
+<span class="w">    </span>ref_smooth<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">convol</span>(<span class="nb">transpose</span>(ref),<span class="w"> </span>SG_filter,<span class="w"> </span><span class="o">/</span>edge_truncate)
 
-<span class="w">  </span>data_Ta<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">read_csv</span>(fn_Ta,<span class="w"> </span>count<span class="o">=</span>n11)
-<span class="w">  </span>data_GNSS<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">read_csv</span>(fn_GNSS,<span class="w"> </span>count<span class="o">=</span>n12)
-
-<span class="w">  </span><span class="c1">; help, data_Ta</span>
-<span class="w">  </span><span class="c1">; help, data_GNSS</span>
-<span class="w">  </span>Datetime_Ta<span class="w"> </span><span class="o">=</span><span class="w"> </span>data_Ta.(<span class="mi">0</span>)
-<span class="w">  </span>Ta<span class="w"> </span><span class="o">=</span><span class="w"> </span>data_Ta.(<span class="mi">1</span>)
-<span class="w">  </span>Date_GNSS<span class="w"> </span><span class="o">=</span><span class="w"> </span>data_GNSS.(<span class="mi">0</span>)
-<span class="w">  </span>Time_GNSS<span class="w"> </span><span class="o">=</span><span class="w"> </span>data_GNSS.(<span class="mi">1</span>)
-<span class="w">  </span>Lat<span class="w"> </span><span class="o">=</span><span class="w"> </span>data_GNSS.(<span class="mi">2</span>)
-<span class="w">  </span>Lon<span class="w"> </span><span class="o">=</span><span class="w"> </span>data_GNSS.(<span class="mi">3</span>)
+<span class="w">    </span><span class="nb">return</span>,<span class="w"> </span>ref_smooth
 <span class="k">end</span>
 </pre></div>
 </div>
-<p>Procedure <code class="docutils literal notranslate"><span class="pre">ConvertJultime</span></code></p>
-<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">pro</span><span class="w"> </span>ConvertJultime,<span class="w"> </span>Datetime_Ta,<span class="w"> </span>Date_GNSS,<span class="w"> </span>Time_GNSS,<span class="w"> </span>jultime_Ta<span class="o">=</span>jultime_Ta,<span class="w"> </span>jultime_GNSS<span class="o">=</span>jultime_GNSS,<span class="w"> </span>date_Ta<span class="o">=</span>date_Ta,<span class="w"> </span>time_Ta<span class="o">=</span>time_Ta
-<span class="w">  </span><span class="c1">; 20221108 14:15:01</span>
-<span class="w">  </span>n_Ta<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">n_elements</span>(Datetime_Ta)
-<span class="w">  </span>jultime_Ta<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dblarr</span>(n_Ta)
+<p>function <code class="docutils literal notranslate"><span class="pre">Data_Deriv</span></code></p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>Data_Deriv,<span class="w"> </span>wv,<span class="w"> </span>ref_smooth
+<span class="w">    </span>deriv_first<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">deriv</span>(wv,<span class="w"> </span>ref_smooth)
+<span class="w">    </span>
+<span class="w">    </span>w<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">where</span>(wv<span class="w"> </span><span class="k">ge</span><span class="w"> </span><span class="mi">680</span><span class="w"> </span><span class="k">and</span><span class="w"> </span>wv<span class="w"> </span><span class="k">le</span><span class="w"> </span><span class="mi">760</span>)
+<span class="w">    </span>twv<span class="w"> </span><span class="o">=</span><span class="w"> </span>wv[w]
+<span class="w">    </span>tderiv<span class="w"> </span><span class="o">=</span><span class="w"> </span>deriv_first[w]
 
-<span class="w">  </span>date_Ta<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">strarr</span>(n_Ta)
-<span class="w">  </span>time_Ta<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">strarr</span>(n_Ta)
+<span class="w">    </span>RE_pos<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span>(tderiv,<span class="w"> </span>index)
+<span class="w">    </span>RE_amp<span class="w"> </span><span class="o">=</span><span class="w"> </span>twv(index)
 
-<span class="w">  </span><span class="k">for</span><span class="w"> </span>i<span class="o">=</span><span class="mi">0</span>,<span class="w"> </span>n_Ta<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">    </span>tstr<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">strsplit</span>(Datetime_Ta[i],<span class="w"> </span><span class="s1">&#39; :&#39;</span>,<span class="w"> </span><span class="o">/</span>extract)
-<span class="w">    </span><span class="c1">;year = tstr[0][0:3]  syntax wrong</span>
-<span class="w">    </span><span class="c1">;month = tstr[0][4:5] syntax wrong</span>
-<span class="w">    </span><span class="c1">;day = tstr[0][6:7]   syntax wrong</span>
-<span class="w">    </span>year<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">strmid</span>(tstr[<span class="mi">0</span>],<span class="w"> </span><span class="mi">0</span>,<span class="w"> </span><span class="mi">4</span>)<span class="w">    </span>;<span class="w"> </span>提取年份
-<span class="w">    </span>month<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">strmid</span>(tstr[<span class="mi">0</span>],<span class="w"> </span><span class="mi">4</span>,<span class="w"> </span><span class="mi">2</span>)<span class="w">   </span>;<span class="w"> </span>提取月份
-<span class="w">    </span>day<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">strmid</span>(tstr[<span class="mi">0</span>],<span class="w"> </span><span class="mi">6</span>,<span class="w"> </span><span class="mi">2</span>)<span class="w">     </span>;<span class="w"> </span>提取日期
-<span class="w">    </span>hour<span class="w"> </span><span class="o">=</span><span class="w"> </span>tstr[<span class="mi">1</span>]
-<span class="w">    </span>minute<span class="w"> </span><span class="o">=</span><span class="w"> </span>tstr[<span class="mi">2</span>]
-<span class="w">    </span>second<span class="w"> </span><span class="o">=</span><span class="w"> </span>tstr[<span class="mi">3</span>]
+<span class="w">    </span>intvl_spec<span class="w"> </span><span class="o">=</span><span class="w"> </span>twv[<span class="mi">1</span>]<span class="w"> </span><span class="o">-</span><span class="w"> </span>twv[<span class="mi">0</span>]
+<span class="w">    </span>RE_are<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">total</span>(tderiv<span class="o">*</span>intvl_spec)
 
-<span class="w">    </span>jultime_Ta[i]<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">julday</span>(month,<span class="w"> </span>day,<span class="w"> </span>year,<span class="w"> </span>hour,<span class="w"> </span>minute,<span class="w"> </span>second)
-
-<span class="w">    </span>tstr<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">strsplit</span>(Datetime_Ta[i],<span class="w"> </span><span class="s1">&#39; &#39;</span>,<span class="w"> </span><span class="o">/</span>extract)
-<span class="w">    </span>date_Ta[i]<span class="w"> </span><span class="o">=</span><span class="w"> </span>tstr[<span class="mi">0</span>]
-<span class="w">    </span>time_Ta[i]<span class="w"> </span><span class="o">=</span><span class="w"> </span>tstr[<span class="mi">1</span>]
-<span class="w">  </span><span class="k">endfor</span>
-
-<span class="w">  </span>n_GNSS<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">n_elements</span>(Date_GNSS)
-<span class="w">  </span>jultime_GNSS<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dblarr</span>(n_GNSS)
-
-<span class="w">  </span><span class="k">for</span><span class="w"> </span>i<span class="o">=</span><span class="mi">0</span>,<span class="w"> </span>n_GNSS<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">begin</span>
-<span class="w">    </span>tstr<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">strsplit</span>(Date_GNSS[i],<span class="w"> </span><span class="s1">&#39;/&#39;</span>,<span class="w"> </span><span class="o">/</span>extract)
-<span class="w">    </span>month<span class="w"> </span><span class="o">=</span><span class="w"> </span>tstr[<span class="mi">0</span>]
-<span class="w">    </span>day<span class="w"> </span><span class="o">=</span><span class="w"> </span>tstr[<span class="mi">1</span>]
-<span class="w">    </span>year<span class="w"> </span><span class="o">=</span><span class="w"> </span>tstr[<span class="mi">2</span>]
-
-<span class="w">    </span>tstr<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">strsplit</span>(Time_GNSS[i],<span class="w"> </span><span class="s1">&#39;:&#39;</span>,<span class="w"> </span><span class="o">/</span>extract)
-<span class="w">    </span>hour<span class="w"> </span><span class="o">=</span><span class="w"> </span>tstr[<span class="mi">0</span>]
-<span class="w">    </span>minute<span class="w"> </span><span class="o">=</span><span class="w"> </span>tstr[<span class="mi">1</span>]
-<span class="w">    </span>second<span class="w"> </span><span class="o">=</span><span class="w"> </span>tstr[<span class="mi">2</span>]
-
-<span class="w">    </span>jultime_GNSS[i]<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">julday</span>(month,<span class="w"> </span>day,<span class="w"> </span>year,<span class="w"> </span>hour,<span class="w"> </span>minute,<span class="w"> </span>second)
-<span class="w">  </span><span class="k">endfor</span>
-
+<span class="w">    </span><span class="nb">return</span>,<span class="w"> </span>{deriv_first<span class="o">:</span>deriv_first,RE_par<span class="o">:</span>[RE_pos,RE_amp,RE_are]}
 <span class="k">end</span>
 </pre></div>
 </div>
-<p>Procedure <code class="docutils literal notranslate"><span class="pre">Interpolation</span></code></p>
-<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">pro</span><span class="w"> </span>Interpolation,<span class="w"> </span>Lat,<span class="w"> </span>Lon,<span class="w"> </span>time_Ta,<span class="w"> </span>time_GNSS,<span class="w"> </span>Lat_Ta<span class="o">=</span>Lat_Ta,<span class="w"> </span>Lon_Ta<span class="o">=</span>Lon_Ta
-<span class="w">  </span>Lat_Ta<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">interpol</span>(Lat,<span class="w"> </span>time_GNSS,<span class="w"> </span>time_Ta)
-<span class="w">  </span>Lon_Ta<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">interpol</span>(Lon,<span class="w"> </span>time_GNSS,<span class="w"> </span>time_Ta)
+<p>function <code class="docutils literal notranslate"><span class="pre">Save_file</span></code></p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">pro</span><span class="w"> </span>Save_file,<span class="w"> </span>fnums,<span class="w"> </span>fns,<span class="w"> </span>wv,<span class="w"> </span>ref_smooth,<span class="w"> </span>deriv_first,<span class="w"> </span>RE_pars
+<span class="w">    </span>snames<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">strarr</span>(fnums)
+<span class="w">    </span><span class="k">for</span><span class="w"> </span>i<span class="o">=</span><span class="mi">0</span>,fnums<span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>snames[i]<span class="o">=</span><span class="nb">file_basename</span>(fns[i],<span class="w"> </span><span class="s1">&#39;.txt&#39;</span>)
+<span class="w">    </span>header<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="s1">&#39;Wavelength(nm)&#39;</span>,<span class="w"> </span>snames]
+
+<span class="w">    </span>o_fn<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Spectra_smoothed.csv&#39;</span>
+<span class="w">    </span><span class="nb">help</span>,<span class="w"> </span>[wv,<span class="w"> </span>ref_smooth]
+<span class="w">    </span><span class="nb">help</span>,<span class="w"> </span>header
+<span class="w">    </span><span class="nb">write_csv</span>,<span class="w"> </span>o_fn,<span class="w"> </span>[wv,<span class="w"> </span>ref_smooth],<span class="w"> </span>header<span class="o">=</span>header
+
+<span class="w">    </span>o_fn<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Deriv_1st.csv&#39;</span>
+<span class="w">    </span><span class="nb">write_csv</span>,<span class="w"> </span>o_fn,<span class="w"> </span>[wv,<span class="w"> </span>deriv_first],<span class="w"> </span>header<span class="o">=</span>header
+
+<span class="w">    </span>o_fn<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Rededge_pars.csv&#39;</span>
+<span class="w">    </span><span class="nb">write_csv</span>,<span class="w"> </span>o_fn,<span class="w"> </span>snames,<span class="w"> </span><span class="nb">transpose</span>(RE_pars[<span class="mi">0</span>,<span class="o">*</span>]),<span class="w"> </span>$
+<span class="w">        </span><span class="nb">transpose</span>(RE_pars[<span class="mi">1</span>,<span class="o">*</span>]),<span class="w">  </span><span class="nb">transpose</span>(RE_pars[<span class="mi">2</span>,<span class="o">*</span>]),<span class="w"> </span>$
+<span class="w">        </span>header<span class="o">=</span>[<span class="s1">&#39;Par&#39;</span>,<span class="s1">&#39;REP&#39;</span>,<span class="s1">&#39;Dr&#39;</span>,<span class="s1">&#39;SDr&#39;</span>]
 <span class="k">end</span>
 </pre></div>
 </div>
-<p>Procedure <code class="docutils literal notranslate"><span class="pre">SaveFile</span></code></p>
-<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">pro</span><span class="w"> </span>SaveFile,<span class="w"> </span>Date_Ta,<span class="w"> </span>Time_Ta,<span class="w"> </span>Lat_Ta,<span class="w"> </span>Lon_Ta,<span class="w"> </span>Ta
-<span class="w">  </span>o_fn<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dialog_pickfile</span>(title<span class="o">=</span><span class="s1">&#39;Save Output&#39;</span>)<span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;.csv&#39;</span>
-<span class="w">  </span>header<span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="s1">&#39;Date&#39;</span>,<span class="w"> </span><span class="s1">&#39;Time&#39;</span>,<span class="w"> </span><span class="s1">&#39;Lat&#39;</span>,<span class="w"> </span><span class="s1">&#39;Lon&#39;</span>,<span class="w"> </span><span class="s1">&#39;Ta&#39;</span>]
-<span class="w">  </span><span class="nb">write_csv</span>,<span class="w"> </span>o_fn,<span class="w"> </span>Date_Ta,<span class="w"> </span>Time_Ta,<span class="w"> </span>Lat_Ta,<span class="w"> </span>Lon_Ta,<span class="w"> </span>Ta,<span class="w"> </span>header<span class="w"> </span><span class="o">=</span><span class="w"> </span>header
-<span class="k">end</span>
-</pre></div>
-</div>
-<p>Main Procedure <code class="docutils literal notranslate"><span class="pre">TemperatureMobileObservations</span></code></p>
-<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">pro</span><span class="w"> </span>main
-<span class="w">  </span>ReadData,<span class="w"> </span>Datetime_Ta<span class="o">=</span>Datetime_Ta,<span class="w"> </span>Ta<span class="o">=</span>Ta,<span class="w"> </span>Date_GNSS<span class="o">=</span>Date_GNSS,<span class="w"> </span>Time_GNSS<span class="o">=</span>Time_GNSS,<span class="w"> </span>Lat<span class="o">=</span>Lat,<span class="w"> </span>Lon<span class="o">=</span>Lon
-<span class="w">  </span>ConvertJultime,<span class="w"> </span>Datetime_Ta,<span class="w"> </span>Date_GNSS,<span class="w"> </span>Time_GNSS,<span class="w"> </span>jultime_Ta<span class="o">=</span>jultime_Ta,<span class="w"> </span>jultime_GNSS<span class="o">=</span>jultime_GNSS,<span class="w"> </span>date_Ta<span class="o">=</span>date_Ta,<span class="w"> </span>time_Ta<span class="o">=</span>time_Ta
-<span class="w">  </span>Interpolation,<span class="w"> </span>Lat,<span class="w"> </span>Lon,<span class="w"> </span>jultime_Ta,<span class="w"> </span>jultime_GNSS,<span class="w"> </span>Lat_Ta<span class="o">=</span>Lat_Ta,<span class="w"> </span>Lon_Ta<span class="o">=</span>Lon_Ta
-<span class="w">  </span>SaveFile,<span class="w"> </span>date_Ta,<span class="w"> </span>time_Ta,<span class="w"> </span>Lat_Ta,<span class="w"> </span>Lon_Ta,<span class="w"> </span>Ta
+<p>procedure</p>
+<div class="highlight-idl notranslate"><div class="highlight"><pre><span></span><span class="k">pro</span><span class="w"> </span>test2
+<span class="w">    </span>sfile<span class="w"> </span><span class="o">=</span><span class="w"> </span>Read_file()
+<span class="w">    </span>fns<span class="w"> </span><span class="o">=</span><span class="w"> </span>sfile.fns
+<span class="w">    </span>fnums<span class="w"> </span><span class="o">=</span><span class="w"> </span>sfile.fnums
+
+<span class="w">    </span>nl<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">file_lines</span>(fns[<span class="mi">0</span>])<span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span>ref_smooth<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">fltarr</span>(fnums,<span class="w"> </span>nl)
+<span class="w">    </span>deriv_first<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">fltarr</span>(fnums,<span class="w"> </span>nl)
+<span class="w">    </span>RE_pars<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">fltarr</span>(<span class="mi">3</span>,<span class="w"> </span>fnums)
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span>i<span class="o">=</span><span class="mi">0</span>,<span class="w"> </span>fnums<span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">begin</span>
+<span class="w">      </span>header<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+<span class="w">      </span>data<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">fltarr</span>(<span class="mi">2</span>,<span class="w"> </span>nl)
+<span class="w">      </span>
+<span class="w">      </span>openr,<span class="w"> </span>lun,<span class="w"> </span>fns[i],<span class="w"> </span><span class="o">/</span><span class="nb">get_lun</span>
+<span class="w">      </span>readf,<span class="w"> </span>lun,<span class="w"> </span>header
+<span class="w">      </span>readf,<span class="w"> </span>lun,<span class="w"> </span>data
+<span class="w">      </span><span class="nb">free_lun</span>,<span class="w"> </span>lun
+<span class="w">    </span>
+<span class="w">      </span>wv<span class="w"> </span><span class="o">=</span><span class="w"> </span>data[<span class="mi">0</span>,<span class="w"> </span><span class="o">*</span>]
+<span class="w">      </span>ref<span class="w"> </span><span class="o">=</span><span class="w"> </span>data[<span class="mi">1</span>,<span class="w"> </span><span class="o">*</span>]
+<span class="w">      </span>ref_smooth_i<span class="w"> </span><span class="o">=</span><span class="w"> </span>SG_smooth(ref,<span class="w"> </span><span class="mi">5</span>,<span class="w"> </span><span class="mi">5</span>,<span class="w"> </span><span class="mi">0</span>,<span class="w"> </span><span class="mi">2</span>)
+<span class="w">      </span>ref_smooth[i,<span class="w"> </span><span class="o">*</span>]<span class="w"> </span><span class="o">=</span><span class="w"> </span>ref_smooth_i
+<span class="w">      </span>
+<span class="w">      </span>Out<span class="w"> </span><span class="o">=</span><span class="w"> </span>Data_Deriv(wv,<span class="w"> </span>ref_smooth_i)
+<span class="w">      </span>deriv_first[i,<span class="o">*</span>]<span class="w"> </span><span class="o">=</span><span class="w"> </span>Out.deriv_first
+<span class="w">      </span>RE_pars[<span class="o">*</span>,<span class="w"> </span>i]<span class="w"> </span><span class="o">=</span><span class="w"> </span>Out.RE_par
+<span class="w">    </span><span class="k">endfor</span>
+
+<span class="w">    </span>Save_file,<span class="w"> </span>fnums,<span class="w"> </span>fns,<span class="w"> </span>wv,<span class="w"> </span>ref_smooth,<span class="w"> </span>deriv_first,<span class="w"> </span>RE_pars
+
 <span class="k">end</span>
 </pre></div>
 </div>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="result">
+<h1>Result<a class="headerlink" href="#result" title="Link to this heading">#</a></h1>
+<p>file <code class="docutils literal notranslate"><span class="pre">Spectra_smoothed.csv</span></code></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Wavelength(nm)</p></th>
+<th class="head"><p>S01</p></th>
+<th class="head"><p>S02</p></th>
+<th class="head"><p>S03</p></th>
+<th class="head"><p>S04</p></th>
+<th class="head"><p>S05</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>350.000</p></td>
+<td><p>0.0270858</p></td>
+<td><p>0.0270858</p></td>
+<td><p>0.0270858</p></td>
+<td><p>0.0270858</p></td>
+<td><p>0.0270858</p></td>
+</tr>
+<tr class="row-odd"><td><p>351.000</p></td>
+<td><p>0.0270392</p></td>
+<td><p>0.0270392</p></td>
+<td><p>0.0270392</p></td>
+<td><p>0.0270392</p></td>
+<td><p>0.0270392</p></td>
+</tr>
+<tr class="row-even"><td><p>352.000</p></td>
+<td><p>0.0268846</p></td>
+<td><p>0.0268846</p></td>
+<td><p>0.0268846</p></td>
+<td><p>0.0268846</p></td>
+<td><p>0.0268846</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>file <code class="docutils literal notranslate"><span class="pre">Deriv_1st.csv</span></code></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Wavelength(nm)</p></th>
+<th class="head"><p>S01</p></th>
+<th class="head"><p>S02</p></th>
+<th class="head"><p>S03</p></th>
+<th class="head"><p>S04</p></th>
+<th class="head"><p>S05</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>350.000</p></td>
+<td><p>7.34348e-006</p></td>
+<td><p>7.34348e-006</p></td>
+<td><p>7.34348e-006</p></td>
+<td><p>7.34348e-006</p></td>
+<td><p>7.34348e-006</p></td>
+</tr>
+<tr class="row-odd"><td><p>351.000</p></td>
+<td><p>-0.000100583</p></td>
+<td><p>-0.000100583</p></td>
+<td><p>-0.000100583</p></td>
+<td><p>-0.000100583</p></td>
+<td><p>-0.000100583</p></td>
+</tr>
+<tr class="row-even"><td><p>352.000</p></td>
+<td><p>-0.000158509</p></td>
+<td><p>-0.000158509</p></td>
+<td><p>-0.000158509</p></td>
+<td><p>-0.000158509</p></td>
+<td><p>-0.000158509</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>file <code class="docutils literal notranslate"><span class="pre">Rededge_pars.csv</span></code></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Par</p></th>
+<th class="head"><p>REP</p></th>
+<th class="head"><p>Dr</p></th>
+<th class="head"><p>SDr</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S01</p></td>
+<td><p>0.0139338</p></td>
+<td><p>730.000</p></td>
+<td><p>0.654881</p></td>
+</tr>
+<tr class="row-odd"><td><p>S02</p></td>
+<td><p>0.0139338</p></td>
+<td><p>730.000</p></td>
+<td><p>0.654881</p></td>
+</tr>
+<tr class="row-even"><td><p>S03</p></td>
+<td><p>0.0139338</p></td>
+<td><p>730.000</p></td>
+<td><p>0.654881</p></td>
+</tr>
+<tr class="row-odd"><td><p>S04</p></td>
+<td><p>0.0139338</p></td>
+<td><p>730.000</p></td>
+<td><p>0.654881</p></td>
+</tr>
+<tr class="row-even"><td><p>S05</p></td>
+<td><p>0.0139338</p></td>
+<td><p>730.000</p></td>
+<td><p>0.654881</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -625,7 +720,7 @@ You need to correlate temperature and latitude and longitude information accordi
         },
         kernelOptions: {
             name: "python3",
-            path: "./book\application\Lab1"
+            path: "./book\application\App2"
         },
         predefinedOutput: true
     }
@@ -643,12 +738,12 @@ You need to correlate temperature and latitude and longitude information accordi
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="../App1/app1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">IDL Application</p>
+        <p class="prev-next-title">Temperature Mobile Observation Data Processing</p>
       </div>
     </a>
 </div>
@@ -668,10 +763,15 @@ You need to correlate temperature and latitude and longitude information accordi
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Spectral Data Extraction and Feature Extraction</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code">Code</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#result">Result</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>

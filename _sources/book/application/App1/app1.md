@@ -2,6 +2,9 @@
 ## Overview
 Today we use portable mobile weather station and handheld GNSS device to conduct temperature movement observations.The weather station acquires weather and time information, and GNSS obtain the latitude, longitude and time information of the observation route.  
 You need to correlate temperature and latitude and longitude information according to the time, and finally product temperature data with latitude and longitude.
+- Read Data
+- Interpolate
+- Save Output
 ## Data
 Temperature Observation File `Ta_record.csv`
 
@@ -116,3 +119,11 @@ pro main
   SaveFile, date_Ta, time_Ta, Lat_Ta, Lon_Ta, Ta
 end
 ```
+
+# Result
+file `output.csv`
+|Date|Time|Lat|Lon|Ta|
+|-|-|-|-|-
+|20221108|14:15:01|32.20772737000000|118.7126562000000|23.58000000000000|
+|20221108|14:15:03|32.20772734000000|118.7126563000000|23.61000000000000|
+|20221108|14:15:05|32.20772722000000|118.7126561000000|23.61000000000000|
