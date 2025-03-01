@@ -109,7 +109,7 @@ pro test2
 
 end
 ```
-# Result
+## Result
 
 file `Spectra_smoothed.csv`
 
